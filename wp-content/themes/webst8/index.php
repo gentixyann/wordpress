@@ -30,6 +30,7 @@
 		  </div>
 		</nav>
 		<div id="top-vg">
+<!--		get_template_directory_uri()は、現在利用しているテーマ(親テーマ)のパスを戻り値として返すワードプレス独自の関数-->
 			<img src="<?php echo get_template_directory_uri(); ?>/images/top.jpeg" alt="トップページ画像" >
 		</div>
 	</header>
