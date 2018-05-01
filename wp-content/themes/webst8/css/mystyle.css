@@ -4,8 +4,14 @@ h1{ font-size:28px; font-weight: bold;}
 h2{ font-size:20px;}
 h3{ font-size:18px;}
 img{ max-width:100%;  }
+
+div#top-vg img {
+    width: 100%;
+    height: 450px;
+}
+
 #content{
-  background:url(images/pattern-diamond.png);
+  background:url(../images/top.jpeg);
   padding-top:20px;
   padding-bottom:20px;
 }
