@@ -1,44 +1,5 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <title>
-        <?php bloginfo( 'name' ); ?>
-        <?php wp_title(); ?>
-    </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
-    <?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-
-    <!-- ヘッダー -->
-    <header>
-        <div class="container">
-            <div id="header_left">
-                <!--   bloginfo( ‘name’ )を使って、WordPress管理画面の「設定」→「一般」で設定された「サイトのタイトル」を表示。 bloginfo( ‘description’ )を使って、WordPress管理画面の「設定」→「一般」で設定された「キャッチフレーズ」を表示。 wp_nav_menu( ‘theme_location=navigation’ )を使って、WordPress管理画面の「外観」→「メニュー」で設定したメニューを表示-->
-                <h1>
-                    <a href="<?php echo home_url(); ?>">
-                        <?php bloginfo( 'name' ); ?>
-                    </a>
-                </h1>
-                <p>
-                    <?php bloginfo( 'description' ); ?>
-                </p>
-            </div>
-            <div id="header_right">
-                <nav>
-                    <?php wp_nav_menu( 'theme_location=navigation' ); ?>
-                </nav>
-            </div>
-            <div class="clearbox">
-            </div>
-        </div>
-    </header>
-
+<?php get_header(); ?>
+   
     <!-- コンテンツ(記事、記事一覧) -->
     <div class="container">
         <div class="contents">
@@ -47,14 +8,14 @@
             <article <?php post_class(); ?>>
                 <!-- 記事タイトル -->
 
-                <!--        is_single()を使って、記事の個別ページとトップページを切り分けています。else側のルートがトップページ用の処理-->
+                <!-- is_single()を使って、記事の個別ページとトップページを切り分けています。else側のルートがトップページ用の処理-->
                 <?php if( is_single() ): ?>
                 <h1>
                     <?php the_title(); ?>
                 </h1>
                 <?php else: ?>
 
-                <!--            aタグでthe_permalink()を指定し、クリックすると記事の個別ページへジャンプする-->
+                <!-- aタグでthe_permalink()を指定し、クリックすると記事の個別ページへジャンプする-->
                 <h1>
                     <a href="<?php the_permalink(); ?>">
                         <?php the_title(); ?>
@@ -82,7 +43,7 @@
                 <div class="row">
                     <div class="col one-second eyecatch">
 
-                        <!--         has_post_thumbnail()を使って、記事にアイキャッチ画像があるかどうかをチェック アイキャッチ画像が設定されている場合は、the_post_thumbnail( ‘large’ )を使ってアイキャッチ画像を表示-->
+                        <!--  has_post_thumbnail()を使って、記事にアイキャッチ画像があるかどうかをチェック アイキャッチ画像が設定されている場合は、the_post_thumbnail( ‘large’ )を使ってアイキャッチ画像を表示-->
                         <?php if( has_post_thumbnail() ): ?>
                         <a href="<?php the_permalink(); ?>">
                             <?php the_post_thumbnail( 'large' ); ?>
@@ -136,6 +97,8 @@
 
         </div>
         <!-- contents -->
+        
+        <?php get_sidebar(); ?>
 
         <div class="blogmenu">
             <ul>
@@ -147,22 +110,4 @@
     </div>
     <!--- container -->
 
-    <footer id="contents_footer">
-        <div class="container">
-            <div id="footer_contents">
-                <div id="footer_sitemap">
-                    <?php wp_nav_menu( 'theme_location=navigation' ); ?>
-                </div>
-                <div id="footer_txt">
-                    <?php bloginfo( 'name' ); ?>
-                </div>
-            </div>
-            <div id="footer_copyright">
-                <small>&copy; 2018 original theme</small>
-            </div>
-        </div>
-    </footer>
-    <?php wp_footer(); ?>
-</body>
-
-</html>
+   <?php get_footer(); ?>
