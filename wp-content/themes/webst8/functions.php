@@ -18,7 +18,8 @@ function my_more($more) {
 }
 
 function add_files(){
-   wp_enqueue_style( 'main_style', get_stylesheet_uri(). '/style.css');
+wp_enqueue_style( 'main_style', get_stylesheet_uri());
+
 }
 add_action('wp_enqueue_scripts', 'add_files');
 
@@ -37,5 +38,46 @@ register_sidebar(array(
 			'before_title' => '<h4 class="sidebar-title">',
 			'after_title' => '</h4>'
 ));
+
+/**
+ * 投稿画面から不要な機能を削除します。
+ */
+function remove_post_supports() {
+ 
+	unregister_taxonomy_for_object_type( 'category', 'post' ); // カテゴリ
+}
+add_action( 'init', 'remove_post_supports' );
+ 
+
+
+function my_contact_enqueue_scripts(){
+wp_deregister_script('contact-form-7');
+wp_deregister_style('contact-form-7');
+if (is_page('contact')) {
+ if (function_exists( 'wpcf7_enqueue_scripts')) {
+        wpcf7_enqueue_scripts();
+ }
+ if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+ wpcf7_enqueue_styles();
+ }
+}
+}
+add_action( 'wp_enqueue_scripts', 'my_contact_enqueue_scripts');
+
+
+// Bootstrapの読み込み
+function my_bootstrap_scripts() {
+ 
+wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
+ 
+//wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/bootstrap/js/vendor/bootstrap.min.js', array(), '1.0.0', true );
+}
+ 
+add_action( 'wp_enqueue_scripts', 'my_bootstrap_scripts' );
+
+
+
+
+
 
 ?>

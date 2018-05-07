@@ -450,3 +450,40 @@ article img {
 }
  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*　ContactForm7のテーブル化レスポンシブ調整　*/
+ 
+.wpcf7 .wpcf7-response-output {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.wpcf7 .wpcf7-validation-errors {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.wpcf7 .wpcf7-mail-sent-ok {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.req{
+    font-size: 12px;
+    font-weight: normal;
+    vertical-align: baseline;
+}

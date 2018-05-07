@@ -94,6 +94,8 @@
   </span>
             </div>
             <?php endif; ?>
+            
+            <?php comments_template(); ?>
 
         </div>
         <!-- contents -->
