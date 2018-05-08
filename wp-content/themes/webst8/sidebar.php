@@ -1,4 +1,4 @@
-<?php if(! is_home()): //home以外に適用する ?>
+<!--<?php if(! is_home()): ?>-->
 
 <li class="post_list">
 <h2 class="text-center">記事一覧</h2>
@@ -13,7 +13,7 @@
 <?php endforeach; ?>
 </li>
 
-<?php endif; ?>
+<!--<?php endif; ?>-->
            
 
            
