@@ -1,9 +1,13 @@
  <footer id="contents_footer">
         <div class="container">
             <div id="footer_contents">
+               
+<!--
                 <div id="footer_sitemap">
                     <?php wp_nav_menu( 'theme_location=navigation' ); ?>
                 </div>
+-->
+                
                 <div id="footer_txt">
                     <?php bloginfo( 'name' ); ?>
                 </div>
