@@ -458,6 +458,10 @@ article img {
  
 }
 
+input[type=submit] {
+  font-family: FontAwesome;
+}
+
 
 
 
