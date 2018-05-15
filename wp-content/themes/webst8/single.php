@@ -100,7 +100,6 @@
         </div>
         <!-- contents -->
         
-        <?php get_sidebar(); ?>
 
         <div class="blogmenu">
             <ul>

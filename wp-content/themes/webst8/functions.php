@@ -67,9 +67,7 @@ add_action( 'wp_enqueue_scripts', 'my_contact_enqueue_scripts');
 
 // Bootstrapの読み込み
 function my_bootstrap_scripts() {
- 
 wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
- 
 //wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/bootstrap/js/vendor/bootstrap.min.js', array(), '1.0.0', true );
 }
  
