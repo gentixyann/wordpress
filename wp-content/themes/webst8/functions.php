@@ -43,7 +43,7 @@ register_sidebar(array(
  * 投稿画面から不要な機能を削除します。
  */
 //function remove_post_supports() {
-//	unregister_taxonomy_for_object_type( 'category', 'post' ); // カテゴリ
+//	unregister_taxonomy_for_object_type( 'category', 'post' ); // これはカテゴリを消してる
 //}
 //add_action( 'init', 'remove_post_supports' );
 // 
