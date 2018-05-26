@@ -3,6 +3,8 @@
     <!-- コンテンツ(記事、記事一覧) -->
     <div class="container">
         <div class="contents">
+           
+         <?php query_posts($query_string .'&order=ASC'); ?>
             <!-- ■■■■■■ 記事ループ スタート ■■■■■■■ -->
             <?php if(have_posts()): while(have_posts()): the_post(); ?>
             <article <?php post_class(); ?>>
