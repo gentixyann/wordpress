@@ -4,6 +4,7 @@
     <div class="container">
         <div class="contents">
            
+           <!-- ■■■■■■ 記事を古い順で表示する為のコード ■■■■■■■ -->
          <?php query_posts($query_string .'&order=ASC'); ?>
             <!-- ■■■■■■ 記事ループ スタート ■■■■■■■ -->
             <?php if(have_posts()): while(have_posts()): the_post(); ?>

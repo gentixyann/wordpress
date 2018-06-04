@@ -6,10 +6,9 @@
  		<div id="main" class="col-md-9">
       <h1>記事一覧</h1>
       <hr>
-      <?php 
-      if ( have_posts() ) :
-          while ( have_posts() ) : the_post();
-      ?>
+        <!-- ■■■■■■ 記事を古い順で表示する為のコード ■■■■■■■ -->
+        <?php query_posts($query_string .'&order=ASC'); ?>
+      <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
           <h2>
             <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
           </h2>
