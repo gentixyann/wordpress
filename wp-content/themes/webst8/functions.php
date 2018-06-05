@@ -74,6 +74,36 @@ add_action( 'wp_enqueue_scripts', 'my_bootstrap_scripts' );
 
 
 
+/*
+ * 投稿にアーカイブ(投稿一覧)を持たせるようにします。
+ * ※ 記載後にパーマリンク設定で「変更を保存」してください。
+ */
+function post_has_archive( $args, $post_type ) {
+	if ( 'post' == $post_type ) {
+		$args['rewrite'] = true;
+		$args['has_archive'] = 'post-all'; // ページ名
+	}
+	return $args;
+}
+add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+
+
+
+
+
+
+
+
+//function Include_my_php($params = array()) {
+//    extract(shortcode_atts(array(
+//        'file' => 'default'
+//    ), $params));
+//    ob_start();
+//    include(get_theme_root() . '/' . get_template() . "/$file.php");
+//    return ob_get_clean();
+//}
+//add_shortcode('myphp', 'Include_my_php');
 
 
 
