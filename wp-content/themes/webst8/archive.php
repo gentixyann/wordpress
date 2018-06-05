@@ -4,7 +4,11 @@
  <section id="content">
 	 <div id="content-wrap" class="container">
  		<div id="main" class="col-md-9">
-      <h1>記事一覧</h1>
+<h1>
+    <?php $cat = get_the_category(); ?>
+    <?php $cat = $cat[0]; ?>
+    <?php echo get_cat_name($cat->term_id); ?>
+</h1>
       <hr>
         <!-- ■■■■■■ 記事を古い順で表示する為のコード ■■■■■■■ -->
         <?php query_posts($query_string .'&order=ASC'); ?>
