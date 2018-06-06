@@ -3,6 +3,7 @@
        
 <div class="container">
     <div class="contents">
+<!--           カテゴリ名をリンクなしで出す-->
         <h1>
             <?php $cat = get_the_category(); ?>
             <?php $cat = $cat[0]; ?>
@@ -11,6 +12,8 @@
 
         <!-- ■■■■■■ 記事を古い順で表示する為のコード ■■■■■■■ -->
         <?php query_posts($query_string .'&order=ASC'); ?>
+              
+
         <?php  if ( have_posts() ) :  while ( have_posts() ) : the_post(); ?>
         <article <?php post_class(); ?>>
             <h3>
@@ -40,6 +43,7 @@
         <?php 
           endwhile;
       endif;
+        wp_reset_query();
       ?>
 
         <div id="sidebar" class="col-md-3">

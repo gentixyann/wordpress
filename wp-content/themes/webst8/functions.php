@@ -89,21 +89,31 @@ add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
 
 
 
+/**
+ * トップページのみ表示する最大投稿数を変更します。
+ */
+function change_home_posts_per_page( $query ) {
+	// 管理画面、またはメインのループでない場合中断
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	
+	// トップページは表示件数を5件にする。ただしquery_posts($query_string .'&order=ASC');を無効にしないと効かない
+	if ( $query->is_home() ) {
+		$query->set( 'posts_per_page', 5);
+		return;
+	}
+    
+     if($query->is_category()){ // カテゴリーアーカイブ
+      $query->set('posts_per_page',20); 
+    }
+}
+add_action( 'pre_get_posts', 'change_home_posts_per_page' );
 
 
 
 
 
-
-//function Include_my_php($params = array()) {
-//    extract(shortcode_atts(array(
-//        'file' => 'default'
-//    ), $params));
-//    ob_start();
-//    include(get_theme_root() . '/' . get_template() . "/$file.php");
-//    return ob_get_clean();
-//}
-//add_shortcode('myphp', 'Include_my_php');
 
 
 

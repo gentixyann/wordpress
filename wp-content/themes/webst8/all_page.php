@@ -9,6 +9,7 @@
 $args = array(
     'post_type' => 'post', //投稿を表示
     'posts_per_page' => 100, //表示する件数
+    'order' =>  'ASC',//並び順の指定
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) :
