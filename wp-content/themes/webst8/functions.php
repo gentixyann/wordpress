@@ -22,9 +22,9 @@ add_filter('excerpt_more','my_more');
 //cssとjsの読み込み
 function theme_name_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-//	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/hage.css' );
+	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/mystyle.css' );
 	wp_enqueue_script( 'jquery');
-	//wp_enqueue_script( 'hoge', get_template_directory_uri() . '/js/hoge.js');
+	wp_enqueue_script( 'hoge', get_template_directory_uri() . '/js/hoge.js');
 }
 add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
 
