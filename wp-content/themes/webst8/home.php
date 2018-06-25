@@ -3,6 +3,19 @@
     <!-- コンテンツ(記事、記事一覧) -->
     <div class="container">
         <div class="contents">
+        
+        
+        
+        
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!4v1529904521801!6m8!1m7!1sCAoSLEFGMVFpcFA2YWpYdlJoZkhDUFByQ2R1aWZjSTZUUDVPZTFCanVHdGQ1ZzBl!2m2!1d38.364532144919!2d140.38160661781!3f265.38236571482213!4f0.1562227795501201!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        
+        
+        
+        
+        
+        
+        
     
            <!-- ■■■■■■ 記事を古い順で表示する為のコード ■■■■■■■ -->
          <?php query_posts($query_string .'&order=ASC'); ?>

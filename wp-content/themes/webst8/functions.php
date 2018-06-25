@@ -16,16 +16,26 @@ add_filter('excerpt_mblength','my_length');
 function my_more($more) {
   return '・・・';
 }
-
-function add_files(){
-wp_enqueue_style( 'main_style', get_stylesheet_uri());
-
-}
-add_action('wp_enqueue_scripts', 'add_files');
-
-
- 
 add_filter('excerpt_more','my_more');
+
+
+//cssとjsの読み込み
+function theme_name_scripts() {
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+//	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/hage.css' );
+	wp_enqueue_script( 'jquery');
+	//wp_enqueue_script( 'hoge', get_template_directory_uri() . '/js/hoge.js');
+}
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+
+// Bootstrapの読み込み
+function my_bootstrap_scripts() {
+wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
+wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/bootstrap/js/vendor/bootstrap.min.js' ); 
+}
+ 
+add_action( 'wp_enqueue_scripts', 'my_bootstrap_scripts' );
+
  
 // アイキャッチ画像。add_theme_support( ‘post-thumbnails’ );をfunctions.php内に記載することで、WordPressの記事投稿画面でアイキャッチ画像を設定できる
 add_theme_support( 'post-thumbnails' );
@@ -62,15 +72,6 @@ if (is_page('contact')) {
 }
 }
 add_action( 'wp_enqueue_scripts', 'my_contact_enqueue_scripts');
-
-
-// Bootstrapの読み込み
-function my_bootstrap_scripts() {
-wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
-//wp_enqueue_script( 'bootstrap-script', get_template_directory_uri() . '/bootstrap/js/vendor/bootstrap.min.js', array(), '1.0.0', true );
-}
- 
-add_action( 'wp_enqueue_scripts', 'my_bootstrap_scripts' );
 
 
 
