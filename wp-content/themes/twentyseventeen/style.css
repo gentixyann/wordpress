@@ -837,7 +837,8 @@ html[lang="ja"] button,
 html[lang="ja"] input,
 html[lang="ja"] select,
 html[lang="ja"] textarea {
-	font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
+	/* font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif; */
+	font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
 }
 
 html[lang="ja"] h1,
@@ -1549,6 +1550,7 @@ body {
 
 #masthead .wrap {
 	position: relative;
+	text-align: center;
 }
 
 .site-header {
@@ -1586,7 +1588,7 @@ body {
 	letter-spacing: 0.08em;
 	margin: 0;
 	padding: 0;
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 .site-title,
@@ -3456,20 +3458,20 @@ p > object:only-child {
 
 	.site-title {
 		font-size: 36px;
-		font-size: 2.25rem;
+		font-size: 3.25rem;
 	}
 
 	.site-description {
 		font-size: 16px;
-		font-size: 1rem;
+		font-size: 2rem;
 	}
 
 	/* Navigation */
 
 	.navigation-top {
 		bottom: 0;
-		font-size: 14px;
-		font-size: 0.875rem;
+		font-size: 10px;
+		font-size: 0.775rem;
 		left: 0;
 		position: absolute;
 		right: 0;
@@ -3516,6 +3518,7 @@ p > object:only-child {
 	.js .main-navigation ul ul,
 	.js .main-navigation > div > ul {
 		display: block;
+		text-align: center;
 	}
 
 	.main-navigation ul {
@@ -3723,7 +3726,7 @@ p > object:only-child {
 	.home.blog.has-header-image .custom-header-media,
 	.home.blog.has-header-video .custom-header-media {
 		height: 1200px;
-		height: 100vh;
+		height: 60vh;
 		max-height: 100%;
 		overflow: hidden;
 	}
@@ -4047,9 +4050,9 @@ p > object:only-child {
 	}
 
 	.site-info {
-		float: left;
+		text-align: center;
 		padding: 0.7em 0 0;
-		width: 58%;
+		width: 100%;
 	}
 
 	.social-navigation + .site-info {
@@ -4093,7 +4096,7 @@ p > object:only-child {
 
 	/* Navigation */
 	.navigation-top .wrap {
-		padding: 0.75em 2em;
+		padding: 0.15em 1em;
 	}
 
 	.navigation-top nav {

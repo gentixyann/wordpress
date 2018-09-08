@@ -19,6 +19,9 @@ function my_more($more) {
 add_filter('excerpt_more','my_more');
 
 
+add_theme_support( 'custom-header');
+
+
 //cssとjsの読み込み
 function theme_name_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );

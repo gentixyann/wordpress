@@ -18,6 +18,10 @@
     <!-- ヘッダー -->
     <header>
         <div class="container">
+           <?php if ( get_header_image() ) : ?>
+    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="">
+<?php endif; ?>
+
             <div id="header_left">
                 <!--   bloginfo( ‘name’ )を使って、WordPress管理画面の「設定」→「一般」で設定された「サイトのタイトル」を表示。 bloginfo( ‘description’ )を使って、WordPress管理画面の「設定」→「一般」で設定された「キャッチフレーズ」を表示。 wp_nav_menu( ‘theme_location=navigation’ )を使って、WordPress管理画面の「外観」→「メニュー」で設定したメニューを表示-->
                 <h1>
