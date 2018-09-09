@@ -56,7 +56,7 @@
 		if ( !is_single() ) {
         get_the_title();
     } else {
-			he_content(
+			the_content(
 				sprintf(
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 					get_the_title()
