@@ -1554,7 +1554,7 @@ body {
   letter-spacing: 0.08em;
   margin: 0;
   padding: 0;
-  /* text-transform: uppercase; */
+   text-transform:  none;
 }
 
 .site-title,
@@ -2288,6 +2288,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   font-size: 16px;
   font-size: 1rem;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .social-navigation ul {
@@ -2330,6 +2331,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
   font-size: 14px;
   font-size: 0.875rem;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .site-info a {
@@ -3835,8 +3837,8 @@ p > object:only-child {
   .error404.has-sidebar #primary .page-content,
   body.page-two-column:not(.archive) #primary .entry-content,
   body.page-two-column #comments {
-    float: right;
-    width: 58%;
+    float: left;
+    width: 80%;
   }
 
   .blog .site-main > article,
@@ -4324,3 +4326,40 @@ p > object:only-child {
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
 }
+
+/* --------related---------- */
+#related h3 {
+  height: 45px;
+    line-height: 45px;
+    font-size: 14px;
+    margin: 0 0 35px 0;
+}
+
+#related h3 span {
+  display: inline-block;
+background: #222;
+color: #fff;
+padding: 0 35px;
+}
+
+#related ol {
+  padding-left: 0px;
+}
+
+#related li {
+  list-style: none;
+  border-bottom: 1px dotted #ddd;
+  margin: 0 2% 30px 0;
+  padding: 0 0 0px 0px;
+  width: 48%;
+  float: left;
+}
+
+#related img.wp-post-image {
+  width: 100%;
+  height: auto;
+}
+/* #related div .li {
+  margin-top: 0;
+  margin-bottom: 20px;
+} */
