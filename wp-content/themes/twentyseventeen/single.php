@@ -49,12 +49,12 @@ get_header(); ?>
 				<li>
 					<span class="cat-thum">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>の詳細へ"><?php
-					if ( has_post_thumbnail()) {
-							 the_post_thumbnail('thumbnail');
-							} else {
-						 echo '<img src="'.get_bloginfo('template_url').'/images/no-image.gif" alt="hoge" />';
-						 };
-					?></a>
+          if ( has_post_thumbnail()) {
+               the_post_thumbnail('thumbnail');
+              } else {
+             echo '<img src="'.get_bloginfo('template_url').'/images/no-image.gif" alt="hoge" />';
+             };
+          ?></a>
 					</span>
 				<div>
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>

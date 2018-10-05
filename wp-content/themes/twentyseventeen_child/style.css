@@ -2799,7 +2799,7 @@ video {
   img,
   video {
     height: auto; /* Make sure images are scaled correctly. */
-    max-width: 50%; /* Adhere to container width. */
+    max-width: 60%; /* Adhere to container width. */
   }
 }
 
@@ -4346,18 +4346,41 @@ padding: 0 35px;
   padding-left: 0px;
 }
 
-#related li {
+
+ @media screen and (max-width: 399px) {
+  #related li {
   list-style: none;
   border-bottom: 1px dotted #ddd;
   margin: 0 2% 30px 0;
   padding: 0 0 0px 0px;
-  width: 48%;
+  max-width: 100%;
+    min-width: initial;
   float: left;
 }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #related li {
+  list-style: none;
+  border-bottom: 1px dotted #ddd;
+  margin: 0 2% 30px 0;
+  padding: 0 0 0px 0px;
+  max-width: 48%;
+    min-width: initial;
+  float: left;
+}
+ }
 
 #related img.wp-post-image {
   width: 100%;
   height: auto;
+}
+
+  @media screen and (max-width: 899px){
+  .instagram-media{
+    max-width: 100% !important;
+    min-width: initial !important;
+  }
 }
 /* #related div .li {
   margin-top: 0;
