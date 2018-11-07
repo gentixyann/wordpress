@@ -27,7 +27,7 @@ get_header(); ?>
 
 <div id="related">
 <h3>
-	<span>関連記事</span>
+	<span>related posts</span>
 </h3>
 <ol>
 				<?php
@@ -62,7 +62,7 @@ get_header(); ?>
 		</li>
 				<?php } wp_reset_query();
 				} else { ?>
-				<p class="no-related">関連記事ないわ</p>
+				<p class="no-related">Nothing related posts</p>
 				<?php } } ?>
 			</ol>
 </div>

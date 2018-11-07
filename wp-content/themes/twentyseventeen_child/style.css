@@ -4373,7 +4373,8 @@ padding: 0 35px;
 
 #related img.wp-post-image {
   width: 100%;
-  height: auto;
+  max-height: 200px;
+  object-fit: cover;
 }
 
   @media screen and (max-width: 899px){
@@ -4382,7 +4383,57 @@ padding: 0 35px;
     min-width: initial !important;
   }
 }
-/* #related div .li {
-  margin-top: 0;
-  margin-bottom: 20px;
-} */
+
+
+/*目次css*/
+#toc_container {
+position: relative;
+width: 100%;
+margin: 2.5em 0;
+padding: 10px 15px;
+border-top: solid 5px;
+font-size: .95em;
+background: #f9f9f9;
+border-color: #000000;
+box-shadow: 0 1.5px 2.4px rgba(0,0,0,.15);
+}
+#toc_container .toc_title {
+text-align: center;
+margin: 0 0 0 5px;
+padding-top: 5px;
+font-size: 23px;
+font-weight: bold;
+}
+#toc_container ul {
+list-style-type: disc;
+padding: 0;
+border: 0;
+}
+#toc_container .toc_list li {
+font-weight: bold;
+}
+#toc_container .toc_list {
+margin-bottom: 0;
+margin-left: 18px;
+}
+#toc_container .toc_list li ul {
+margin: 5px;
+padding-left: 15px;
+}
+
+
+.youtube {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin: 10px 0 25px 0;
+}
+.youtube iframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
