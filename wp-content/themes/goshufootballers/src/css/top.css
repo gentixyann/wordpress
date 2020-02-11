@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+
+/*-----------------------------------------
+Top img
+-----------------------------------------*/
+.topimg-pc{
+  display: none;
+}
+.topimg-sp{
+  background-color: #fff;
+}
+.topimg-sp img{
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .topimg-sp img{
+    display: none;
+  }
+  .topimg-pc{
+    width: auto;
+    height: 420px;
+    text-align: center;
+    display: block;
+    background-image: url("../img/top_img.jpg");
+    background-position:center;
+    background-size:cover;
+    width:100%;
+    height:400px;
+  }
+  .topimg-pc h1{
+    font-size: 2.8rem;
+    color: #FFF;
+    margin: 0px auto 12px;
+    padding: 180px 0 18px;
+  }
+  .topimg-pc h6{
+    font-size: 1.0rem;
+    color: #FFF;
+  }
+}
+
+
+
+
+/*-----------------------------------------
+Top Header
+-----------------------------------------*/
+@media screen and (min-width: 768px){
+  .header {
+    width: auto;
+    background-color: rgb(0,0,0,0);
+    transform: translateX(0px) translateY(400px) rotate(0deg);
+    right: 0px;
+    }
+}
+
+
+
+
+/*-----------------------------------------
+Archives
+-----------------------------------------*/
+@media screen and (min-width: 768px){
+  .archives {
+    padding-top: 56px;
+  }
+}
+
+
+
+/*-----------------------------------------
+readmore
+-----------------------------------------*/
+.readmore {
+	width: 100%;
+  padding: 0 0 114px;
+	text-align: center;
+}
+.readmore a {
+  font-size: 2.0rem;
+  font-family: 'Noto Sans JP Thin', 'Noto Sans', sans-serif;
+	font-weight: 100;
+  color: #3E3C41;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  position: relative;
+}
+.readmore a::after{
+	position: absolute;
+	bottom: 0;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-color: #171717;
+	text-align: center;
+	-webkit-transition: width .25s cubic-bezier(.215,.61,.355,1) 0s;
+	transition: width .25s cubic-bezier(.215,.61,.355,1) 0s;
+}
+.readmore a:hover {
+  text-decoration:none;
+	opacity: 0.5;
+  letter-spacing: 0rem;
+}
+
+@media screen and (min-width: 768px) {
+	.readmore {
+		width: 100%;
+    padding: 80px 0 144px;
+  	}
+	.readmore a {
+    font-size: 2.75rem;
+    padding-bottom: 8px;
+    position: relative;
+	}
+	.readmore a::after {
+    width: 68px;
+	}
+}

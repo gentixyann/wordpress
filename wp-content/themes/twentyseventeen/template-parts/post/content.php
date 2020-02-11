@@ -2,7 +2,7 @@
 /**
  * Template part for displaying posts
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage Twenty_Seventeen
@@ -51,18 +51,13 @@
 
 	<div class="entry-content">
 		<?php
-
 		/* translators: %s: Name of current post */
-		if ( !is_single() ) {
-        get_the_title();
-    } else {
-			the_content(
-				sprintf(
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-					get_the_title()
-				)
-			);
-    }
+		the_content(
+			sprintf(
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+				get_the_title()
+			)
+		);
 
 		wp_link_pages(
 			array(
@@ -81,4 +76,4 @@
 	}
 	?>
 
-</article><!-- #post-## -->
+</article><!-- #post-<?php the_ID(); ?> -->

@@ -4,7 +4,7 @@ Theme URI: https://wordpress.org/themes/twentyseventeen/
 Author: the WordPress team
 Author URI: https://wordpress.org/
 Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
-Version: 1.6
+Version: 2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: twentyseventeen
@@ -437,6 +437,9 @@ h6 {
 }
 
 h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
 h5:first-child,
 h6:first-child {
 	padding-top: 0;
@@ -504,23 +507,9 @@ blockquote {
 	font-size: 1.125rem;
 	font-style: italic;
 	line-height: 1.7;
-	margin-bottom: 20px;
-	margin-left: 0;
-	margin-right: 0;
+	margin: 0;
 	overflow: hidden;
-	background: #f2f2f2;
-	padding: 10px 15px 10px 15px;
-	border-radius: 4px;
-}
-
-blockquote:after{
-position: absolute;
-bottom: 0;
-right: 0;
-content: '”';
-font-family: sans-serif;
-font-size: 6em;
-opacity: .1;
+	padding: 0;
 }
 
 blockquote cite {
@@ -848,8 +837,7 @@ html[lang="ja"] button,
 html[lang="ja"] input,
 html[lang="ja"] select,
 html[lang="ja"] textarea {
-	/* font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif; */
-	font-family: "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+	font-family: "Hiragino Kaku Gothic Pro", Meiryo, sans-serif;
 }
 
 html[lang="ja"] h1,
@@ -994,6 +982,11 @@ select {
 	max-width: 100%;
 }
 
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	outline: thin dotted #333;
+}
+
 input[type="radio"],
 input[type="checkbox"] {
 	margin-right: 0.5em;
@@ -1041,7 +1034,7 @@ input[type="submit"].secondary {
 	color: #222;
 }
 
-button:hover,
+button:hover:not( .mejs-container > button ),
 button:focus,
 input[type="button"]:hover,
 input[type="button"]:focus,
@@ -1561,7 +1554,6 @@ body {
 
 #masthead .wrap {
 	position: relative;
-	text-align: center;
 }
 
 .site-header {
@@ -1599,7 +1591,7 @@ body {
 	letter-spacing: 0.08em;
 	margin: 0;
 	padding: 0;
-	/* text-transform: uppercase; */
+	text-transform: uppercase;
 }
 
 .site-title,
@@ -1654,6 +1646,7 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 
 body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline-block;
+	max-width: 100%;
 	vertical-align: middle;
 }
 
@@ -1667,7 +1660,7 @@ body:not(.title-tagline-hidden) .site-branding-text {
 .has-header-video.home.blog .custom-header {
 	display: table;
 	height: 300px;
-	height: 60vh;
+	height: 75vh;
 	width: 100%;
 }
 
@@ -1756,7 +1749,6 @@ body:not(.title-tagline-hidden) .site-branding-text {
 @supports ( object-fit: cover ) {
 	.has-header-image .custom-header-media img,
 	.has-header-video .custom-header-media video,
-	.has-header-video .custom-header-media iframe,
 	.has-header-image:not(.twentyseventeen-front-page):not(.home) .custom-header-media img {
 		height: 100%;
 		left: 0;
@@ -1916,13 +1908,14 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 body.page:not(.twentyseventeen-front-page) .entry-title {
 	color: #222;
 	font-size: 14px;
-	font-size: 2.675rem;
+	font-size: 0.875rem;
 	font-weight: 800;
 	letter-spacing: 0.14em;
+	text-transform: uppercase;
 }
 
 .entry-header .entry-title {
-	margin-bottom: 0.55em;
+	margin-bottom: 0.25em;
 }
 
 .entry-title a {
@@ -2104,6 +2097,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .single-featured-image-header {
+	background-color: #fafafa;
 	border-bottom: 1px solid #eee;
 }
 
@@ -2837,15 +2831,6 @@ video {
 	max-width: 100%; /* Adhere to container width. */
 }
 
-/* 画面幅が800px以上なら */
-@media screen and (min-width: 800px){
-	img,
-	video {
-		height: auto; /* Make sure images are scaled correctly. */
-		max-width: 50%; /* Adhere to container width. */
-	}
-}
-
 img.alignleft,
 img.alignright {
 	float: none;
@@ -3389,7 +3374,7 @@ p > object:only-child {
 	/* Layout */
 
 	.wrap {
-		max-width: 1100px;
+		max-width: 1000px;
 		padding-left: 3em;
 		padding-right: 3em;
 	}
@@ -3402,7 +3387,7 @@ p > object:only-child {
 	.has-sidebar #secondary {
 		float: right;
 		padding-top: 0;
-		width: 25%;
+		width: 36%;
 	}
 
 	.error404 #primary {
@@ -3476,19 +3461,19 @@ p > object:only-child {
 
 	.site-title {
 		font-size: 36px;
-		font-size: 3.25rem;
+		font-size: 2.25rem;
 	}
 
 	.site-description {
 		font-size: 16px;
-		font-size: 2rem;
+		font-size: 1rem;
 	}
 
 	/* Navigation */
 
 	.navigation-top {
 		bottom: 0;
-		font-size: 10px;
+		font-size: 14px;
 		font-size: 0.875rem;
 		left: 0;
 		position: absolute;
@@ -3536,7 +3521,6 @@ p > object:only-child {
 	.js .main-navigation ul ul,
 	.js .main-navigation > div > ul {
 		display: block;
-		text-align: center;
 	}
 
 	.main-navigation ul {
@@ -3744,7 +3728,7 @@ p > object:only-child {
 	.home.blog.has-header-image .custom-header-media,
 	.home.blog.has-header-video .custom-header-media {
 		height: 1200px;
-		height: 65vh;
+		height: 100vh;
 		max-height: 100%;
 		overflow: hidden;
 	}
@@ -3825,8 +3809,8 @@ p > object:only-child {
 
 	.single-post .entry-title,
 	.page .entry-title {
-		/* font-size: 26px; */
-		/* font-size: 1.625rem; */
+		font-size: 26px;
+		font-size: 1.625rem;
 	}
 
 	.comments-pagination,
@@ -3863,7 +3847,7 @@ p > object:only-child {
 	body.has-sidebar.error404 #primary .page-header,
 	body.page-two-column:not(.archive) #primary .entry-header,
 	body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
-		/* float: left; */
+		float: left;
 		width: 36%;
 	}
 
@@ -4068,9 +4052,9 @@ p > object:only-child {
 	}
 
 	.site-info {
-		text-align: center;
+		float: left;
 		padding: 0.7em 0 0;
-		width: 100%;
+		width: 58%;
 	}
 
 	.social-navigation + .site-info {
@@ -4114,7 +4098,7 @@ p > object:only-child {
 
 	/* Navigation */
 	.navigation-top .wrap {
-		padding: 0.15em 1em;
+		padding: 0.75em 2em;
 	}
 
 	.navigation-top nav {
@@ -4345,21 +4329,4 @@ p > object:only-child {
 	.site-footer {
 		padding: 0;
 	}
-}
-
-.well {
-	min-height: 20px;
-	padding: 18px;
-	background-color: #f5f5f5;
-	border: 1px solid #e3e3e3;
-	border-radius: 4px;
-	margin-bottom: 20px;
-}
-
-.headline{
-	  margin: 3em 0 1.5em;
-		padding: 15px;
-    font-weight: 400;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
 }

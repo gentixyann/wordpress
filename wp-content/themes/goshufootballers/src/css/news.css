@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+
+/*-----------------------------------------
+readmore
+-----------------------------------------*/
+.readmore {
+	width: 100%;
+  padding: 0 0 114px;
+	text-align: center;
+}
+.readmore a {
+  font-size: 2.0rem;
+  font-family: 'Noto Sans JP Thin';
+  color: #3E3C41;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  position: relative;
+}
+.readmore a::after{
+	position: absolute;
+	bottom: 0;
+  left: 50%;
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background-color: #171717;
+	text-align: center;
+	-webkit-transition: width .25s cubic-bezier(.215,.61,.355,1) 0s;
+	transition: width .25s cubic-bezier(.215,.61,.355,1) 0s;
+}
+.readmore a:hover {
+  text-decoration:none;
+	opacity: 0.5;
+	letter-spacing: 0.1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+	.readmore {
+		width: 100%;
+    padding: 80px 0 144px;
+  	}
+	.readmore a {
+    font-size: 2.75rem;
+    padding-bottom: 8px;
+    position: relative;
+	}
+	.readmore a::after {
+    width: 68px;
+	}
+}
