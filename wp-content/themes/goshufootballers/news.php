@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template Name: news
+ * Template Name: news.phpテンプレ
  * Description: newsのテンプレート
  */
 ?>
@@ -48,7 +48,8 @@
             } ?></p>
           <div class="archives__box2__tag">
             <p>
-              <a href="news.php">ACL</a>/<a href="news.php">シドニー日本チーム</a>/<a href="news.php">三吉幸樹</a>/<a href="news.php">三羽悠矢</a>/<a href="news.php">Tag</a>/<a href="news.php">Tag</a>/<a href="news.php">Tag</a>
+               <?php the_tags('', ' / ' ); ?>
+            
             </p>
           </div>
         </div>

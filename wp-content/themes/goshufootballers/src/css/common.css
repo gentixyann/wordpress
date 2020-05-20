@@ -466,7 +466,19 @@ effect-fadeふわっと
 .effect-fade.effect-scroll {
 	opacity : 1;
 	transform : translate(0, 0);
+  width: 100%;
 }
+@media screen and (min-width:720px) {
+.effect-recommend {
+  width: 32%;
+}
+}
+@media screen and (max-width:360px) {
+.effect-recommend {
+  width: 100%;
+}
+}
+
 
 
 
@@ -535,7 +547,7 @@ Archives
   overflow: hidden;
   position: relative;
   padding-top: 50%;
-	margin: -8px auto 5px;
+	margin: 8px auto 5px;
 }
 .archives img{
 	width: 90%;
@@ -583,6 +595,14 @@ Archives
 	white-space: nowrap;
 	display: inline-block;
 	font-family: 'Harenosora';
+}
+.archives__box2__tag span{
+  margin-top: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: inline-block;
+  font-family: 'Harenosora';
 }
 .archives__box2__tag a{
 	 margin: 0 5px;
@@ -736,6 +756,8 @@ recommend
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+  max-width: 100%;
+height: auto;
 }
 .recommend__archives-box2{
 	width: 50%;
@@ -763,6 +785,7 @@ recommend
 	.recommend__archives{
 		max-width: 1040px;
 	    display: flex;
+      flex-wrap: wrap;
 	    transform: translateX(-11px) translateY(0px) rotate(0deg);
 	}
 	.recommend h2{
@@ -773,7 +796,7 @@ recommend
 		max-width: 960px;
 	}
 	.recommend__archives-wrapper{
-		padding: 0 5%;
+		padding: 0 3%;
 		display: block;
 	}
 	.recommend__archives-box2 p {
@@ -954,6 +977,12 @@ Category--Tag
 	letter-spacing: 0.1rem;
 	font-family: 'Harenosora';
 }
+.category--tag__wapper ul li{
+  display: inline;
+}
+.category--tag__wapper li{
+  content: '/'
+}
 
 @media screen and (min-width: 768px) {
 	.category--tag h2 {
@@ -1083,5 +1112,11 @@ the_posts_pagination
   .pagination a::after {
     width: 68px;
   }
+}
+
+.notFound {
+  width: 100%;
+  margin: 10% auto;
+  background: #fff;
 }
 

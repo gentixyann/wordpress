@@ -1,101 +1,43 @@
 <footer class="footer">
-    <section class="recommend">
-      <h2>RECOMMEND</h2>
-
-      <div class="recommend__archives">
-        <!-- recommend__archives01 -->
+<section class="recommend">
+  <h2>RECOMMEND</h2>
+    <div class="recommend__archives">
+      <?php
+          if( function_exists( 'setPostViews' ) ) {
+          setPostViews(get_the_ID());
+        }
+        query_posts('meta_key=post_views_count&orderby=meta_value_num&order=DESC&posts_per_page=6');
+        while(have_posts()) : the_post();
+        ?>
+        <div class="effect-recommend">
         <div class="effect-fade">
           <div class="recommend__archives-wrapper">
-            <div class="recommend__archives-box1">
-              <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend01.jpg" alt="おすすめ記事画像"></a>
+             <div class="recommend__archives-box1">
+              <a href="<?php echo get_permalink(); ?>">
+                <?php if(has_post_thumbnail()): ?>　
+                <?php the_post_thumbnail( array( 'class' => 'alignleft')); ?>
+                <?php else: ?><!--アイキャッチ画像がない場合は、デフォルトの画像を表示-->
+                <img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend01.jpg" alt="おすすめ記事画像"></a>
+                <?php endif; ?>
+              </a>
             </div>
             <div class="recommend__archives-box2">
               <div class="recommend__archives-title">
-                <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
+                 <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
               </div>
-              <p>12,345<span>  View</span></p>
+              <p><?php echo getPostViews(get_the_ID()); ?></p>
             </div>
+
           </div>
         </div>
-
-        <!-- recommend__archives02 -->
-        <div class="effect-fade">
-          <div class="recommend__archives-wrapper">
-            <div class="recommend__archives-box1">
-              <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend02.jpg" alt="おすすめ記事画像"></a>
-            </div>
-            <div class="recommend__archives-box2">
-              <div class="recommend__archives-title">
-                <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
-              </div>
-              <p>12,345<span>  View</span></p>
-            </div>
-          </div>
         </div>
-
-          <!-- recommend__archives03 -->
-          <div class="effect-fade">
-            <div class="recommend__archives-wrapper">
-              <div class="recommend__archives-box1">
-                <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend03.jpg" alt="おすすめ記事画像"></a>
-              </div>
-              <div class="recommend__archives-box2">
-                <div class="recommend__archives-title">
-                  <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
-                </div>
-                <p>12,345<span>  View</span></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="recommend__archives">
-          <!-- recommend__archives04 -->
-          <div class="effect-fade">
-            <div class="recommend__archives-wrapper">
-              <div class="recommend__archives-box1">
-                <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend01.jpg" alt="おすすめ記事画像"></a>
-              </div>
-              <div class="recommend__archives-box2">
-                <div class="recommend__archives-title">
-                  <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
-                </div>
-                <p>12,345<span>  View</span></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- recommend__archives05 -->
-          <div class="effect-fade">
-            <div class="recommend__archives-wrapper">
-              <div class="recommend__archives-box1">
-                <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend02.jpg" alt="おすすめ記事画像"></a>
-              </div>
-              <div class="recommend__archives-box2">
-                <div class="recommend__archives-title">
-                  <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
-                </div>
-                <p>12,345<span>  View</span></p>
-              </div>
-            </div>
-          </div>
-
-          <!-- recommend__archives06 -->
-          <div class="effect-fade">
-            <div class="recommend__archives-wrapper">
-              <div class="recommend__archives-box1">
-                <a href="detail.php"><img src="<?php echo get_template_directory_uri(); ?>/src/img/recommend03.jpg" alt="おすすめ記事画像"></a>
-              </div>
-              <div class="recommend__archives-box2">
-                <div class="recommend__archives-title">
-                  <a>タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。タイトルは２行まで表示されます。</a>
-                </div>
-                <p>12,345<span>  View</span></p>
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
+        <?php
+        endwhile;
+        //クエリリセット
+        wp_reset_query();
+        ?>
+    </div>
+</section>
 
 
 
@@ -140,7 +82,24 @@
         <h2>CATEGORY</h2>
         <div class="category--tag__wapper">
           <p>
-            <a href="news">NEWS</a> / <a href="news">PLAYERS</a> / <a href="news">GAME</a> / <a href="news">COLUME</a> / <a href="news">Category</a>
+            <?php
+            // パラメータを指定
+            $args = array(
+              // カテゴリー内の記事数順で指定
+                'orderby' => 'count',
+                // 降順で指定
+                'order' => 'DSC'
+            );
+            $categories = get_categories( $args );
+            foreach( $categories as $category ){
+              echo '<a href="' . get_category_link( $category->term_id ) . '">' . $category->name . '</a> ';
+              if ($category === end($categories)) {
+                echo '';
+              } else {
+                echo ' / ';
+              }
+            }
+            ?>
           </p>
         </div>
         <hr>
@@ -149,19 +108,25 @@
       <div class="effect-fade">
         <h2>TAG</h2>
         <div class="category--tag__wapper">
-          <p>
-            <a href="news">ACL</a> / <a href="news">シドニー日本チーム</a> / <a href="news">三吉幸樹</a> / <a href="news">三羽悠矢</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a> / <a href="news">Tag</a>
-          </p>
+          <?php $args = array(
+            'separator' => " / ",
+            'number' => 0,
+             'smallest' => 8,
+            'largest' => 8,
+          );
+          wp_tag_cloud($args);
+
+           ?>
         </div>
       </div>
     </section>
 
     <div class="Copyright">
       <a href="index.php">
-        <h4>豪洲フットボーラーズ<span><br>〜オーストラリアでチャレンジする選手達の挑戦記〜</span></h4>
+        <h4><?php bloginfo( 'name' ); ?><span><br>〜<?php bloginfo('description'); ?>〜</span></h4>
 
     </a>
-      <p>Copyright © 豪州ソリューションズ All Rights Reserved.</p>
+      <p>Copyright © <?php bloginfo('name'); ?> All Rights Reserved.</p>
     </div>
   </footer>
 

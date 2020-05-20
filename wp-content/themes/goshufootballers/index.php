@@ -1,9 +1,13 @@
 <?php get_header(); ?>
 
 
-
   <div class="topimg-sp">
+     <!-- custom header -->
+         <?php if ( get_header_image() ) : ?>
+    <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+    <?php else: ?>
     <img src="<?php echo get_template_directory_uri(); ?>/src/img/top_img.jpg">
+    <?php endif; ?>
   </div>
 
 
@@ -35,17 +39,18 @@
             }else{
               echo str_replace('\n', '', strip_tags($post->post_content));
             } ?></p>
+
           <div class="archives__box2__tag">
             <p>
-              <a href="news">ACL</a>/<a href="news">シドニー日本チーム</a>/<a href="news">三吉幸樹</a>/<a href="news">三羽悠矢</a>/<a href="news">Tag</a>/<a href="news">Tag</a>/<a href="news">Tag</a>
+               <?php the_tags('', ' / ' ); ?>
             </p>
+           
           </div>
         </div>
       </div>
     </div>
      <?php endwhile; ?>
      <?php endif; ?>
-
     
     <div class="readmore">
       <a href="news">READ MORE</a>

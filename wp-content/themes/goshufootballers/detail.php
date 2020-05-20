@@ -10,7 +10,6 @@
 <!-- 記事詳細のページ。一覧からリンクで飛んできたときに、その記事の内容が表示されるようになっていてほしいです -->
  <?php if(have_posts()): while(have_posts()):the_post(); ?>
 
-
   <section class="detail-mv">
     <div class="detail-mv__bgimg"></div>
     <div class="detail-mv__title">
@@ -88,9 +87,6 @@
   </section>
 
 <?php endwhile; endif; ?>
-
-<?php previous_post_link('%link','古い記事へ'); ?>
-<?php next_post_link('%link','新しい記事へ'); ?>
 
 
   <?php get_footer(); ?>

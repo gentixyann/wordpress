@@ -53,15 +53,21 @@
 
 <body id="js_wrapper">
   <div class="topimg-pc">
-    <h1>豪洲フットボーラーズ</h1>
-    <h6>オーストラリアでチャレンジする選手達の挑戦記</h6>
+       <?php if ( get_header_image() ) : ?>
+          <img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+          
+        <?php endif; ?>
+
+        <h1><?php bloginfo( 'name' ); ?></h1>
+        <h6><?php bloginfo('description'); ?></h6>
+
   </div>
 
   <header class="header">
     <div class="header__title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="none_ovre768">
-        <h1>豪洲フットボーラーズ</h1>
-        <h6>オーストラリアでチャレンジする選手達の挑戦記</h6>
+        <h1><?php bloginfo( 'name' ); ?></h1>
+        <h6><?php bloginfo('description'); ?></h6>
       </a>
     </div>
 
@@ -76,11 +82,11 @@
     <div class="nav">
       <ul>
         <li class="none_ovre768"><a href="index.php">TOP</a></li>
-        <li><a href="news">NEWS</a></li>
-        <li><a href="news/category/PLAYERS">PLAYERS</a></li>
-        <li><a href="news/category/GAME">GAME</a></li>
-        <li><a href="news/category/COLUME">COLUME</a></li>
-        <li><a href="news#about">ABOUT</a></li>
+        <li><a href="<?php echo home_url() ?>/news">NEWS</a></li>
+        <li><a href="<?php echo home_url() ?>/category/PLAYERS">PLAYERS</a></li>
+        <li><a href="<?php echo home_url() ?>/category/GAME">GAME</a></li>
+        <li><a href="<?php echo home_url() ?>/category/COLUME">COLUME</a></li>
+        <li><a href="<?php echo home_url() ?>/news/#about">ABOUT</a></li>
         <div class="nav__search">
           <!-- <link href="news" rel="stylesheet"> -->
            <link href="news">
@@ -97,8 +103,8 @@
   <header class="header">
     <div class="header__title">
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-        <h1>豪洲フットボーラーズ</h1>
-        <h6>オーストラリアでチャレンジする選手達の挑戦記</h6>
+        <h1><?php bloginfo('name'); ?></h1>
+        <h6><?php bloginfo('description'); ?></h6>
       </a>
     </div>
 
@@ -113,11 +119,11 @@
     <div class="nav">
       <ul>
         <li class="none_ovre768"><a href="index.php">TOP</a></li>
-        <li><a href="news">NEWS</a></li>
-        <li><a href="news/category/PLAYERS">PLAYERS</a></li>
-        <li><a href="news/category/GAME">GAME</a></li>
-        <li><a href="news/category/COLUME">COLUME</a></li>
-        <li><a href="news#about">ABOUT</a></li>
+        <li><a href="<?php echo home_url() ?>/news">NEWS</a></li>
+        <li><a href="<?php echo home_url() ?>/category/PLAYERS">PLAYERS</a></li>
+        <li><a href="<?php echo home_url() ?>/category/GAME">GAME</a></li>
+        <li><a href="<?php echo home_url() ?>/category/COLUME">COLUME</a></li>
+        <li><a href="<?php echo home_url() ?>/news/#about">ABOUT</a></li>
         <div class="nav__search">
           <!-- <link href="news" rel="stylesheet"> -->
           <link href="news">

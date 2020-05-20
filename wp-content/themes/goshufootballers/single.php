@@ -1,6 +1,10 @@
 <?php get_header(); ?>
 
 <!-- 記事詳細のページ。一覧からリンクで飛んできたときに、その記事の内容が表示されるようになっていてほしいです -->
+<?php  if( function_exists( 'setPostViews' ) ) {
+          setPostViews(get_the_ID());
+        }
+        ?>
  <?php if(have_posts()): while(have_posts()):the_post(); ?>
 
 
@@ -10,7 +14,7 @@
       <a href="news.php/category/COLUME">COLUME</a>
       <h2><?php the_title(); ?></h2>
       <span><?php the_time('Y.n.j'); ?></span>
-      <p>12,345<span>view</span></p>
+      <p><?php echo getPostViews(get_the_ID()); ?></p>
     </div>
   </section>
 
@@ -36,8 +40,6 @@
 
 <?php endwhile; endif; ?>
 
-<?php previous_post_link('%link','古い記事へ'); ?>
-<?php next_post_link('%link','新しい記事へ'); ?>
 
 
   <?php get_footer(); ?>
